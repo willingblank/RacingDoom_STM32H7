@@ -94,18 +94,16 @@ int main(void)
   MX_USART1_UART_Init();
   /* USER CODE BEGIN 2 */
 	LCD_Init();
-	LCD_Clear(RED);           //清屏
+	LCD_Clear(WHITE);           //清屏
+	LCD_ShowString(100,100,200,5,16,BLACK,(u8 *)"RacingDooM");
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-		printf("hello world = %d",23);
-		LCD_Clear(WHITE);           //清屏
-		HAL_Delay(100);
-		LCD_Clear(RED);           //清屏
-		HAL_Delay(100);
+//		printf("hello world = %d",23);
+//		HAL_Delay(1000);
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */

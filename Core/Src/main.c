@@ -19,6 +19,7 @@
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "dcmi.h"
+#include "dma.h"
 #include "spi.h"
 #include "usart.h"
 #include "gpio.h"
@@ -89,15 +90,14 @@ int main(void)
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
-  MX_DCMI_Init();
+  MX_DMA_Init();
   MX_SPI2_Init();
+  MX_DCMI_Init();
   MX_USART1_UART_Init();
   /* USER CODE BEGIN 2 */
 	LCD_Init();
-	LCD_Clear(RED);           //清屏
-	LCD_Fill(10,10,30,30,LIGHTGREEN);
-	LCD_ShowChar(50,50,'G',24,BLACK,1);
-	LCD_ShowString(100,100,200,5,16,BLACK,(u8 *)"zdh is shit");
+	LCD_Clear(WHITE);           //清屏
+	LCD_ShowString(100,100,200,5,16,BLACK,(u8 *)"RacingDooM");
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -105,11 +105,6 @@ int main(void)
   while (1)
   {
 //		printf("hello world = %d",23);
-//		LCD_Clear(WHITE);           //清屏
-//		HAL_Delay(1000);
-//		LCD_Clear(RED);           //清屏
-//		//LCD_ShowString(10,10,5,5,5,BLACK,(u8 *)"hello");
-//		LCD_ShowNum(10,10,2333,4,10,BLACK);
 //		HAL_Delay(1000);
     /* USER CODE END WHILE */
 
